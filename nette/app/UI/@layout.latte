@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
+</head>
+
+<body>
+		{block content}
+		<h1>Můj blog</h1>
+
+		<div n:foreach="$posts as $post" class="post">
+			<div class="date">{$post->created_at|date:'F j, Y'}</div>
+
+			<h2>{$post->title}</h2>
+
+			<div>{$post->content|truncate:256}</div>
+		</div>
+	{/block}
+
+	{block scripts}
+	<script src="https://unpkg.com/nette-forms@3/src/assets/netteForms.js"></script>
+	{/block}
+</body>
+</html>
