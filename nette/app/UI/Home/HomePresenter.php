@@ -20,7 +20,7 @@ final class HomePresenter extends Nette\Application\UI\Presenter
 	{
 		$this->template->posts = $this->database
 			->table('posts')
-			->where('name', 'Article Two')
+			->where('title', 'Article Two')
 			->order('created_at DESC')
 			->limit(5);
 	}

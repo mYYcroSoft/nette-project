@@ -10,7 +10,7 @@ final class Template_a2407a4507 extends Latte\Runtime\Template
 	public const Source = 'C:\\Users\\jsivc\\OneDrive\\Dokumenty\\GitHub\\nette-project\\nette\\app\\UI/@layout.latte';
 
 	public const Blocks = [
-		['content' => 'blockContent', 'scripts' => 'blockScripts'],
+		['content' => 'blockContent'],
 	];
 
 
@@ -41,63 +41,37 @@ final class Template_a2407a4507 extends Latte\Runtime\Template
 </head>
 
 <body>
+
+    <ul class="navig">
+        <li><a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:')) /* line 30 */;
+		echo '">Články</a></li>
 ';
-		$this->renderBlock('content', get_defined_vars()) /* line 11 */;
-		echo "\n";
-		$this->renderBlock('scripts', get_defined_vars()) /* line 23 */;
-		echo '</body>
+		if ($user->isLoggedIn()) /* line 31 */ {
+			echo '            <li><a href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Sign:out')) /* line 32 */;
+			echo '">Odhlásit</a></li>
+';
+		} else /* line 33 */ {
+			echo '            <li><a href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Sign:in')) /* line 34 */;
+			echo '">Přihlásit</a></li>
+';
+		}
+		echo '    </ul>
+
+';
+		$this->renderBlock('content', get_defined_vars()) /* line 38 */;
+		echo '
+
+</body>
 </html>
 ';
 	}
 
 
-	public function prepare(): array
-	{
-		extract($this->params);
-
-		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['post' => '14'], $this->params) as $ʟ_v => $ʟ_l) {
-				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
-			}
-		}
-		return get_defined_vars();
-	}
-
-
-	/** {block content} on line 11 */
+	/** {block content} on line 38 */
 	public function blockContent(array $ʟ_args): void
 	{
-		extract($this->params);
-		extract($ʟ_args);
-		unset($ʟ_args);
-
-		echo '		<h1>Můj blog</h1>
-
-';
-		foreach ($posts as $post) /* line 14 */ {
-			echo '		<div class="post">
-			<div class="date">';
-			echo LR\Filters::escapeHtmlText(($this->filters->date)($post->created_at, 'F j, Y')) /* line 15 */;
-			echo '</div>
-
-			<h2>';
-			echo LR\Filters::escapeHtmlText($post->title) /* line 17 */;
-			echo '</h2>
-
-			<div>';
-			echo LR\Filters::escapeHtmlText(($this->filters->truncate)($post->content, 256)) /* line 19 */;
-			echo '</div>
-		</div>
-';
-
-		}
-	}
-
-
-	/** {block scripts} on line 23 */
-	public function blockScripts(array $ʟ_args): void
-	{
-		echo '	<script src="https://unpkg.com/nette-forms@3/src/assets/netteForms.js"></script>
-';
 	}
 }

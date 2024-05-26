@@ -19,6 +19,13 @@ final class Template_31a01e08d7 extends Latte\Runtime\Template
 			return;
 		}
 
-		echo '<h1>POST 11</h1>';
+		echo '<h1>Value</h1>
+
+<span>';
+		echo LR\Filters::escapeHtmlText($name) /* line 3 */;
+		echo '</span>
+<span>';
+		echo LR\Filters::escapeHtmlText($id) /* line 4 */;
+		echo '</span>';
 	}
 }

@@ -1,9 +1,9 @@
 services:
-	- App\Core\RouterFactory::createRouter
-
+    routing.router: @App\Core\RouterFactory::createRouter
+    - App\UI\Sign\SignPresenter
 
 search:
-	-	in: %appDir%
-		classes:
-			- *Factory
-			- *Facade
+    - in: %appDir%
+      classes:
+          - *Factory
+          - *Facade

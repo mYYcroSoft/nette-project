@@ -2,6 +2,7 @@
     "require": {
         "nette/utils": "^4.0",
         "nette/database": "^3.2",
-        "nette/application": "^3.2"
+        "nette/application": "^3.2",
+        "nette/security": "^3.2"
     }
 }

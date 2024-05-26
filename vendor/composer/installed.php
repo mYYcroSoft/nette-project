@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '265b8b53c7293ed20baaab1490a96655e7ae274e',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '265b8b53c7293ed20baaab1490a96655e7ae274e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -70,6 +70,15 @@
             'reference' => 'f7419bc147164106cb03b3d331c85aff6cb81fc3',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nette/routing',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'nette/security' => array(
+            'pretty_version' => 'v3.2.0',
+            'version' => '3.2.0.0',
+            'reference' => 'fe89d52697036fb2e14835dfb46b696d28a9ebf6',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../nette/security',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
